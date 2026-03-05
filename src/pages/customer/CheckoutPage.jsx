@@ -26,8 +26,6 @@ import { buildWhatsAppURL } from "../../utils/whatsapp";
 import { toast } from "react-toastify";
 import "./CheckoutPage.css";
 
-const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID || "";
-
 const initialForm = {
     name: "",
     email: "",
@@ -221,7 +219,7 @@ export default function CheckoutPage() {
 
         try {
             const result = await initRazorpayPayment({
-                amountInPaise: grandTotal * 100, // convert ₹ → paise
+                amountInPaise: grandTotal * 100,
                 receipt,
                 prefill: {
                     name: form.name,
@@ -233,7 +231,6 @@ export default function CheckoutPage() {
                     coupon: appliedCoupon?.couponCode || "None",
                     couponDiscount: couponDiscount,
                 },
-                keyId: RAZORPAY_KEY_ID,
                 onSuccess: (details) => {
                     setPaymentDetails(details);
 
@@ -323,14 +320,10 @@ export default function CheckoutPage() {
                                 <span>Order ID</span>
                                 <strong>{createdInvoice.orderId}</strong>
                             </div>
-                            {paymentDetails?.razorpay_payment_id && (
-                                <div className="checkout-success-row">
-                                    <span>Payment ID</span>
-                                    <strong className="checkout-success-payment-id">
-                                        {paymentDetails.razorpay_payment_id}
-                                    </strong>
-                                </div>
-                            )}
+                            <div className="checkout-success-row">
+                                <span>Payment Mode</span>
+                                <strong>💵 Cash on Delivery</strong>
+                            </div>
                             <div className="checkout-success-row">
                                 <span>Amount Paid</span>
                                 <strong className="checkout-success-amount">
@@ -554,14 +547,14 @@ export default function CheckoutPage() {
                         </div>
                     </div>
 
-                    {/* Payment failed banner */}
+                    {/* Order error banner */}
                     {paymentStatus === "failed" && (
                         <div className="payment-error-banner">
-                            ❌ Payment failed or was cancelled. Please try again.
+                            ❌ Order could not be placed. Please try again.
                         </div>
                     )}
 
-                    {/* Pay button */}
+                    {/* Place Order button */}
                     <button
                         type="submit"
                         className="btn btn-primary btn-lg checkout-pay-btn"
@@ -571,20 +564,18 @@ export default function CheckoutPage() {
                         {isProcessing ? (
                             <>
                                 <span className="pay-spinner" />
-                                Processing...
+                                Placing Order...
                             </>
                         ) : (
                             <>
                                 <HiOutlineLockClosed />
-                                Pay {formatPrice(grandTotal)} Securely
+                                Place Order — {formatPrice(grandTotal)}
                             </>
                         )}
                     </button>
 
                     <p className="checkout-razorpay-note">
-                        🔒 Powered by{" "}
-                        <span className="razorpay-brand">Razorpay</span> — UPI, Cards,
-                        Netbanking, Wallets accepted
+                        💵 Cash on Delivery — Pay when your order arrives at your doorstep
                     </p>
                 </form>
 

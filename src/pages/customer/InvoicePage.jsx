@@ -204,11 +204,10 @@ export default function InvoicePage() {
 
                 <div className="inv-doc-divider" />
 
-                {/* Payment method */}
                 <div className="inv-doc-payment-method">
                     <span className="inv-pm-label">Payment Method:</span>
                     <span className="inv-pm-value">
-                        {invoice.paymentMethod === "online" ? "💳 Online (Razorpay)" : "📱 WhatsApp Order"}
+                        {invoice.paymentMethod === "whatsapp" ? "📱 WhatsApp Order" : "💵 Cash on Delivery"}
                     </span>
                 </div>
 

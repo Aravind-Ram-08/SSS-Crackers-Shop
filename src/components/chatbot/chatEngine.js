@@ -759,7 +759,7 @@ export const FAQ_DATA = [
     { id: 2, question: "Do you deliver to my city?", answer: "We deliver across Tamil Nadu, Karnataka, Kerala, and Andhra Pradesh. Contact us for other locations.", category: "Delivery" },
     { id: 3, question: "Are the crackers safe?", answer: "Yes! All our products are manufactured in Sivakasi using safe materials and are tested for quality.", category: "Safety" },
     { id: 4, question: "Can I return damaged products?", answer: "Yes, we replace any damaged products. Contact us within 24 hours of delivery with photos.", category: "Returns" },
-    { id: 5, question: "What payment methods do you accept?", answer: "We accept UPI, Credit/Debit Cards, Net Banking, and Wallets via Razorpay. WhatsApp orders accept UPI.", category: "Payment" },
+    { id: 5, question: "What payment methods do you accept?", answer: "We currently accept Cash on Delivery (COD). You can also place orders via WhatsApp for UPI payments.", category: "Payment" },
     { id: 6, question: "Is online sale legal?", answer: "As per the 2018 SC order, online sales are restricted. We provide information and enquiry support. Orders through licensed channels.", category: "Legal" },
     { id: 7, question: "Do you have Green Crackers?", answer: "Yes! Our sparkler collection includes low-smoke, eco-friendly green sparklers.", category: "Products" },
     { id: 8, question: "How to store crackers safely?", answer: "Store in a cool, dry place away from direct sunlight. Keep away from children and heat sources.", category: "Safety" },

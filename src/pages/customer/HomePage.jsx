@@ -95,8 +95,8 @@ export default function HomePage() {
                     <div className="trust-item">
                         <HiOutlineCash className="trust-icon" />
                         <div>
-                            <strong>Secure Payment</strong>
-                            <span>Razorpay protected</span>
+                            <strong>Cash on Delivery</strong>
+                            <span>Pay when it arrives</span>
                         </div>
                     </div>
                 </div>

@@ -1,13 +1,14 @@
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/* Floating WhatsApp Support Button                                          */
+/* Floating WhatsApp Support Button — Mobile-First Responsive                */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 
 .wa-float-btn {
     position: fixed;
+    /* Desktop: above chatbot toggle */
     bottom: 96px;
     right: 24px;
-    width: 54px;
-    height: 54px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     border: none;
     background: #25d366;
@@ -19,6 +20,7 @@
     justify-content: center;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    touch-action: manipulation;
 }
 
 .wa-float-btn:hover {
@@ -28,6 +30,8 @@
 
 .wa-float-icon {
     transition: transform 0.2s ease;
+    width: 26px;
+    height: 26px;
 }
 
 .wa-float-btn:hover .wa-float-icon {
@@ -38,12 +42,12 @@
     position: absolute;
     top: -4px;
     right: -4px;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     background: #ff6a00;
     color: #fff;
-    font-size: 0.68rem;
+    font-size: 0.65rem;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -69,9 +73,9 @@
 /* Tooltip */
 .wa-float-tooltip {
     position: absolute;
-    right: 64px;
+    right: 60px;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateX(5px);
     white-space: nowrap;
     padding: 6px 12px;
     border-radius: 8px;
@@ -82,7 +86,6 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
-    transform: translateY(-50%) translateX(5px);
 }
 
 .wa-float-btn:hover .wa-float-tooltip {
@@ -90,21 +93,43 @@
     transform: translateY(-50%) translateX(0);
 }
 
-/* Mobile */
-@media (max-width: 480px) {
+/* ── Mobile (≤768px): above bottom nav ────────────────────────────────────── */
+@media (max-width: 768px) {
     .wa-float-btn {
-        bottom: 80px;
-        right: 16px;
-        width: 48px;
-        height: 48px;
+        /* Bottom nav is ~64px, chat toggle is ~54px, add gap */
+        bottom: 130px;
+        right: 14px;
+        width: 46px;
+        height: 46px;
     }
 
     .wa-float-icon {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
     }
 
     .wa-float-tooltip {
         display: none;
+    }
+
+    .wa-float-badge {
+        width: 18px;
+        height: 18px;
+        font-size: 0.6rem;
+    }
+}
+
+/* ── Extra small (≤480px) ───────────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .wa-float-btn {
+        bottom: 128px;
+        right: 12px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .wa-float-icon {
+        width: 20px;
+        height: 20px;
     }
 }

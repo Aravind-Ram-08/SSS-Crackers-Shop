@@ -129,17 +129,17 @@ function App() {
                                                 </Route>
 
                                                 {/* ── Customer ── */}
-                                                <Route path="/*" element={
+                                                <Route path="*" element={
                                                     <CustomerShell>
                                                         <Routes>
-                                                            <Route path="/" element={<HomePage />} />
-                                                            <Route path="/products" element={<ProductsPage />} />
-                                                            <Route path="/products/:id" element={<ProductDetailPage />} />
-                                                            <Route path="/cart" element={<CartPage />} />
-                                                            <Route path="/checkout" element={<CheckoutPage />} />
-                                                            <Route path="/whatsapp-order" element={<WhatsAppCheckout />} />
-                                                            <Route path="/invoice/:invoiceId" element={<InvoicePage />} />
-                                                            <Route path="/track-order" element={<TrackOrderPage />} />
+                                                            <Route index element={<HomePage />} />
+                                                            <Route path="products" element={<ProductsPage />} />
+                                                            <Route path="products/:id" element={<ProductDetailPage />} />
+                                                            <Route path="cart" element={<CartPage />} />
+                                                            <Route path="checkout" element={<CheckoutPage />} />
+                                                            <Route path="whatsapp-order" element={<WhatsAppCheckout />} />
+                                                            <Route path="invoice/:invoiceId" element={<InvoicePage />} />
+                                                            <Route path="track-order" element={<TrackOrderPage />} />
                                                         </Routes>
                                                     </CustomerShell>
                                                 } />

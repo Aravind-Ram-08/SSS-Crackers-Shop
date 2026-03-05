@@ -394,7 +394,7 @@ export default function CartPage() {
                             Order via WhatsApp
                         </button>
 
-                        <p className="summary-secure">🔒 Secure checkout powered by Razorpay</p>
+                        <p className="summary-secure">💵 Cash on Delivery available — Pay when your order arrives</p>
                     </div>
                 </div>
             </div>

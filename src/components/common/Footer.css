@@ -230,4 +230,49 @@
     .footer-grid {
         grid-template-columns: 1fr;
     }
+
+    .footer {
+        padding: 2.5rem 0 0;
+    }
+
+    .footer-container {
+        padding: 0 1rem;
+    }
+
+    .footer-legal {
+        padding: 1.5rem 1.25rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .footer-container {
+        padding: 0 0.875rem;
+    }
+
+    .footer-logo {
+        font-size: 1.25rem;
+    }
+
+    .footer-tagline {
+        font-size: 0.85rem;
+    }
+
+    .footer-links a,
+    .footer-contact li {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .footer-container {
+        padding: 0 0.75rem;
+    }
+
+    .footer-legal {
+        padding: 1.25rem 1rem;
+    }
+
+    .footer-legal-text {
+        font-size: 0.78rem;
+    }
 }
