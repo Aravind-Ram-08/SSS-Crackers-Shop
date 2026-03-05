@@ -1,0 +1,20 @@
+{
+  "name": "sss-crackers-backend",
+  "version": "1.0.0",
+  "description": "SSS Crackers backend API with Razorpay integration",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "razorpay": "^2.9.6"
+  }
+}

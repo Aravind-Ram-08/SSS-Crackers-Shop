@@ -1,0 +1,385 @@
+/* =============================================
+   ADMIN INVOICES PAGE
+   ============================================= */
+
+/* ── Stats ─────────────────────────────────── */
+.ai-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+}
+
+.ai-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 1.15rem 1.25rem;
+    transition: border-color 0.25s;
+}
+
+.ai-stat-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+.ai-stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.ai-stat-value {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+}
+
+.ai-stat-label {
+    font-size: 0.72rem;
+    color: #6b6e85;
+    margin: 0.15rem 0 0;
+    font-weight: 500;
+}
+
+/* ── Toolbar ───────────────────────────────── */
+.ai-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.ai-search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 220px;
+}
+
+.ai-search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b6e85;
+    font-size: 1.05rem;
+    pointer-events: none;
+}
+
+.ai-search {
+    width: 100%;
+    padding: 0.65rem 1rem 0.65rem 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.25s;
+}
+
+.ai-search::placeholder {
+    color: #44475a;
+}
+
+.ai-search:focus {
+    border-color: rgba(255, 140, 0, 0.4);
+}
+
+.ai-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.ai-filter-select {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.85rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.ai-filter-select option {
+    background: #13132b;
+    color: #fff;
+}
+
+.ai-export-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    padding: 0.55rem 1rem;
+    white-space: nowrap;
+}
+
+/* ── Table ─────────────────────────────────── */
+.ai-table-wrap {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.ai-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ai-table thead {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.ai-table th {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #6b6e85;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ai-table td {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    color: #b0b3c5;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    vertical-align: middle;
+}
+
+.ai-table tbody tr {
+    transition: background 0.2s;
+}
+
+.ai-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Cells */
+.ai-id-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.ai-invoice-badge {
+    font-family: monospace;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #818cf8;
+    background: rgba(129, 140, 248, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+}
+
+.ai-copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    color: #555;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.ai-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: #b0b3c5;
+}
+
+.ai-order-id {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #6b6e85;
+}
+
+.ai-date-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.ai-date {
+    font-weight: 600;
+    color: #e0e0e8;
+    font-size: 0.82rem;
+}
+
+.ai-time {
+    font-size: 0.7rem;
+    color: #555;
+}
+
+.ai-customer-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.ai-customer-name {
+    font-weight: 600;
+    color: #e0e0e8;
+    font-size: 0.85rem;
+}
+
+.ai-customer-phone {
+    font-size: 0.72rem;
+    color: #6b6e85;
+}
+
+.ai-items-count {
+    font-size: 0.82rem;
+    color: #b0b3c5;
+}
+
+.ai-amount {
+    font-weight: 700;
+    color: #4ade80;
+    font-size: 0.9rem;
+}
+
+.ai-discount-note {
+    display: block;
+    font-size: 0.68rem;
+    color: #ee0979;
+    margin-top: 0.1rem;
+}
+
+.ai-method-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.ai-method-online {
+    background: rgba(99, 102, 241, 0.1);
+    color: #818cf8;
+}
+
+.ai-method-whatsapp {
+    background: rgba(37, 211, 102, 0.1);
+    color: #25d366;
+}
+
+/* Actions */
+.ai-actions {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.ai-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    background: transparent;
+    color: #6b6e85;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.ai-view:hover {
+    background: rgba(99, 102, 241, 0.1);
+    color: #818cf8;
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+.ai-delete:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.ai-delete-confirm {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.ai-delete-yes {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.ai-delete-no {
+    background: rgba(255, 255, 255, 0.04);
+    color: #6b6e85;
+}
+
+/* Empty */
+.ai-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.ai-empty-icon {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.ai-empty p {
+    color: #6b6e85;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 1024px) {
+    .ai-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .ai-stats-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ai-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ai-toolbar-right {
+        justify-content: space-between;
+    }
+
+    .ai-table-wrap {
+        overflow-x: auto;
+    }
+
+    .ai-table {
+        min-width: 700px;
+    }
+}

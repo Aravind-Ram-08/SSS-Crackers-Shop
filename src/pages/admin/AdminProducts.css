@@ -1,0 +1,403 @@
+/* ============================================================
+   ADMIN PRODUCTS PAGE — SSS Crackers
+   ============================================================ */
+
+/* ── Filters Bar ──────────────────────────────────────────────── */
+.prod-filters {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.prod-search-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+    flex: 1;
+    min-width: 240px;
+    position: relative;
+}
+
+.prod-search-icon {
+    position: absolute;
+    left: 0.85rem;
+    color: #555588;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.prod-search-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #e0e0e8;
+    font-family: inherit;
+    font-size: 0.88rem;
+    padding: 0.7rem 2.5rem 0.7rem 2.5rem;
+}
+
+.prod-search-input::placeholder {
+    color: rgba(170, 170, 204, 0.4);
+}
+
+.prod-search-clear {
+    position: absolute;
+    right: 0.75rem;
+    background: transparent;
+    border: none;
+    color: #555588;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.prod-search-clear:hover {
+    color: #e0e0e8;
+}
+
+.prod-cat-filter {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(255, 255, 255, 0.09);
+    border-radius: 10px;
+    color: #e0e0e8;
+    font-family: inherit;
+    font-size: 0.85rem;
+    padding: 0.65rem 2rem 0.65rem 0.85rem;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236666aa'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.65rem center;
+    background-size: 0.85rem;
+    min-width: 160px;
+}
+
+.prod-cat-filter option {
+    background: #1a1a2e;
+}
+
+/* ── Product Table Cells ──────────────────────────────────────── */
+.prod-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.prod-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.prod-name {
+    font-weight: 600;
+    color: #e0e0e8;
+    font-size: 0.85rem;
+    max-width: 220px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.prod-slug {
+    font-size: 0.72rem;
+    color: #444466;
+    font-family: monospace;
+}
+
+.prod-cat-pill {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.75rem;
+    color: #aaaacc;
+    white-space: nowrap;
+}
+
+.prod-price-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.prod-sale-price {
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 0.88rem;
+}
+
+.prod-orig-price {
+    font-size: 0.75rem;
+    color: #555588;
+    text-decoration: line-through;
+}
+
+.disc-badge {
+    background: rgba(16, 185, 129, 0.12);
+    color: #10b981;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+}
+
+.stock-badge {
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+}
+
+.stock-badge.high {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.stock-badge.mid {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+}
+
+.stock-badge.low {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.rating-cell {
+    font-size: 0.85rem;
+    color: #aaaacc;
+}
+
+.table-footer-note {
+    font-size: 0.78rem;
+    color: #444466;
+    margin-top: 0.85rem;
+    text-align: right;
+}
+
+.admin-table-empty {
+    text-align: center;
+    color: #444466;
+    padding: 3rem 1rem !important;
+    font-size: 0.88rem;
+}
+
+/* ── Modal ────────────────────────────────────────────────────── */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 7, 20, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-box {
+    background: #131328;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 660px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideUp 0.2s ease;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+}
+
+.modal-box-sm {
+    max-width: 440px;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(24px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 1.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.modal-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.modal-close {
+    background: rgba(255, 255, 255, 0.06);
+    border: none;
+    color: #8888aa;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.modal-close:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-body {
+    padding: 1.4rem 1.75rem;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.modal-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.modal-field-full {
+    grid-column: 1 / -1;
+}
+
+.modal-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #8888aa;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.modal-input {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(255, 255, 255, 0.09);
+    border-radius: 9px;
+    color: #e0e0e8;
+    font-family: inherit;
+    font-size: 0.88rem;
+    padding: 0.65rem 0.875rem;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.modal-input:focus {
+    border-color: rgba(255, 106, 0, 0.5);
+    box-shadow: 0 0 0 2px rgba(255, 106, 0, 0.1);
+}
+
+.modal-input::placeholder {
+    color: rgba(170, 170, 204, 0.35);
+}
+
+.modal-input-err {
+    border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+.modal-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236666aa'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 0.9rem;
+    padding-right: 2.2rem;
+}
+
+.modal-select option {
+    background: #1a1a2e;
+}
+
+.modal-textarea {
+    resize: vertical;
+    min-height: 80px;
+    line-height: 1.5;
+}
+
+.modal-err {
+    font-size: 0.75rem;
+    color: #f87171;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding: 1.25rem 1.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ── Delete confirm ───────────────────────────────────────────── */
+.delete-confirm-msg {
+    font-size: 0.9rem;
+    color: #aaaacc;
+    line-height: 1.6;
+}
+
+.delete-confirm-msg strong {
+    color: #fff;
+}
+
+/* Danger button */
+.btn-danger {
+    background: rgba(239, 68, 68, 0.9);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: none;
+    padding: 0.65rem 1.5rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-danger:hover {
+    background: #ef4444;
+}

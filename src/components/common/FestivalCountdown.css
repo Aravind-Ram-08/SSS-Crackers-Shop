@@ -1,0 +1,472 @@
+/* ================================================================
+   FESTIVAL COUNTDOWN STRIP + LIVE BANNER — SSS Crackers
+   ================================================================ */
+
+/* ── Countdown Strip ─────────────────────────────────────────── */
+.festival-countdown-strip {
+    background: linear-gradient(90deg, #0d0511 0%, #1a0530 40%, #230710 100%);
+    border-bottom: 1px solid rgba(255, 106, 0, 0.2);
+    padding: 0.65rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.festival-countdown-strip::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg,
+            transparent,
+            transparent 60px,
+            rgba(255, 106, 0, 0.03) 60px,
+            rgba(255, 106, 0, 0.03) 61px);
+    pointer-events: none;
+}
+
+.fcs-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.fcs-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #ffb347;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.fcs-blocks {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.fcs-block-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.fcs-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 106, 0, 0.12);
+    border: 1px solid rgba(255, 106, 0, 0.25);
+    border-radius: 8px;
+    padding: 0.3rem 0.65rem;
+    min-width: 52px;
+    transition: background 0.3s;
+}
+
+.fcs-block:hover {
+    background: rgba(255, 106, 0, 0.2);
+}
+
+.fcs-num {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    font-family: "Courier New", monospace;
+    letter-spacing: -1px;
+    animation: numFlip 0.3s ease;
+}
+
+@keyframes numFlip {
+    from {
+        opacity: 0.4;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fcs-unit {
+    font-size: 0.6rem;
+    font-weight: 700;
+    color: #ff8c00;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.fcs-sep {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #ff6a00;
+    margin-bottom: 8px;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.2;
+    }
+}
+
+.fcs-msg {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ff8c00;
+    white-space: nowrap;
+    animation: pulse-text 2s ease-in-out infinite;
+}
+
+@keyframes pulse-text {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* ── Sale Live Banner ─────────────────────────────────────────── */
+.festival-live-banner {
+    background: linear-gradient(90deg, #ff6a00, #ff8c00, #ee0979, #ff8c00, #ff6a00);
+    background-size: 300% 100%;
+    animation: saleGradient 3s ease-in-out infinite;
+    padding: 0.65rem 1.5rem;
+}
+
+@keyframes saleGradient {
+    0% {
+        background-position: 0% center;
+    }
+
+    50% {
+        background-position: 100% center;
+    }
+
+    100% {
+        background-position: 0% center;
+    }
+}
+
+.flb-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.flb-text strong {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.03em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.flb-burst {
+    font-size: 1.3rem;
+    animation: burstPop 1.5s ease-in-out infinite;
+}
+
+@keyframes burstPop {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25) rotate(10deg);
+    }
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .fcs-inner {
+        gap: 0.75rem;
+    }
+
+    .fcs-label {
+        font-size: 0.72rem;
+    }
+
+    .fcs-block {
+        min-width: 42px;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .fcs-num {
+        font-size: 1rem;
+    }
+
+    .fcs-msg {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .fcs-inner {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .fcs-blocks {
+        gap: 0.15rem;
+    }
+
+    .fcs-block {
+        min-width: 36px;
+    }
+
+    .fcs-num {
+        font-size: 0.9rem;
+    }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   BANNER STYLE
+   ══════════════════════════════════════════════════════════════ */
+.fcs-style-banner {
+    padding: 1.1rem 1.5rem;
+    background: linear-gradient(135deg, #0d0511 0%, #1a0530 50%, #230710 100%);
+    border-bottom: 1px solid rgba(255, 106, 0, 0.25);
+}
+
+.fcs-banner-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.fcs-banner-left {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.fcs-banner-emoji {
+    font-size: 2.2rem;
+    animation: burstPop 2s ease-in-out infinite;
+    line-height: 1;
+}
+
+.fcs-banner-title {
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.fcs-banner-sub {
+    font-size: 0.72rem;
+    color: #7777aa;
+    margin: 0.15rem 0 0;
+}
+
+.fcs-banner-cta {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #ff8c00;
+    white-space: nowrap;
+    animation: pulse-text 2s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   COMPACT BLOCKS (used inside popup)
+   ══════════════════════════════════════════════════════════════ */
+.fcs-blocks-compact .fcs-block {
+    min-width: 42px;
+    padding: 0.25rem 0.45rem;
+}
+
+.fcs-blocks-compact .fcs-num {
+    font-size: 1rem;
+}
+
+.fcs-blocks-compact .fcs-unit {
+    font-size: 0.55rem;
+}
+
+.fcs-blocks-compact .fcs-sep {
+    font-size: 1rem;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   POPUP STYLE (floating bottom-right)
+   ══════════════════════════════════════════════════════════════ */
+.fcs-popup {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9990;
+    background: linear-gradient(145deg, #1a0a30, #120820);
+    border: 1px solid rgba(255, 106, 0, 0.3);
+    border-radius: 18px;
+    padding: 1.1rem 1.25rem;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 106, 0, 0.1) inset;
+    min-width: 230px;
+    animation: popupSlideIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    backdrop-filter: blur(12px);
+}
+
+@keyframes popupSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.fcs-popup-close {
+    position: absolute;
+    top: 0.55rem;
+    right: 0.65rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: none;
+    color: #6668aa;
+    font-size: 0.7rem;
+    font-weight: 700;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    line-height: 1;
+    padding: 0;
+}
+
+.fcs-popup-close:hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+.fcs-popup-label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #ffb347;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 0.65rem;
+}
+
+.fcs-popup-cta {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #ff8c00;
+    margin: 0.65rem 0 0;
+    text-align: center;
+    animation: pulse-text 2s ease-in-out infinite;
+}
+
+/* popup — sale live variant */
+.fcs-popup-live {
+    border-color: rgba(255, 106, 0, 0.5);
+    background: linear-gradient(145deg, #1a0a10, #2a0a08);
+    text-align: center;
+}
+
+.fcs-popup-fire {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+    animation: burstPop 1.5s ease-in-out infinite;
+}
+
+.fcs-popup-live-msg {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* ── Responsive overrides for Banner & Popup ─────────────────── */
+@media (max-width: 768px) {
+    .fcs-inner {
+        gap: 0.75rem;
+    }
+
+    .fcs-label {
+        font-size: 0.72rem;
+    }
+
+    .fcs-block {
+        min-width: 42px;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .fcs-num {
+        font-size: 1rem;
+    }
+
+    .fcs-msg {
+        display: none;
+    }
+
+    .fcs-banner-inner {
+        gap: 0.75rem;
+        justify-content: center;
+    }
+
+    .fcs-banner-left {
+        justify-content: center;
+    }
+
+    .fcs-banner-cta {
+        display: none;
+    }
+
+    .fcs-popup {
+        bottom: 5rem;
+        right: 0.75rem;
+        left: 0.75rem;
+        min-width: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    .fcs-inner {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .fcs-blocks {
+        gap: 0.15rem;
+    }
+
+    .fcs-block {
+        min-width: 36px;
+    }
+
+    .fcs-num {
+        font-size: 0.9rem;
+    }
+}

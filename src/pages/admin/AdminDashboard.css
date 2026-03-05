@@ -1,0 +1,389 @@
+/* ============================================================
+   SHARED ADMIN PAGE STYLES + DASHBOARD — SSS Crackers
+   ============================================================ */
+
+/* ── Admin Page Base ──────────────────────────────────────────── */
+.admin-page {
+    padding: 2rem 2rem 3rem;
+    min-height: calc(100vh - 64px);
+    max-width: 1400px;
+}
+
+.admin-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.admin-page-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+}
+
+.admin-page-sub {
+    font-size: 0.88rem;
+    color: #6666aa;
+    margin: 0.2rem 0 0;
+}
+
+.admin-page-date {
+    font-size: 0.82rem;
+    color: #555588;
+    white-space: nowrap;
+}
+
+/* ── Admin Card ───────────────────────────────────────────────── */
+.admin-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.admin-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.admin-card-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #e0e0e8;
+    margin: 0;
+}
+
+.admin-card-sub {
+    font-size: 0.78rem;
+    color: #555588;
+}
+
+/* ── KPI Cards ────────────────────────────────────────────────── */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.kpi-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 1.4rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.kpi-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent);
+    opacity: 0.6;
+}
+
+.kpi-card:hover {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px var(--glow);
+}
+
+.kpi-icon-wrap {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--accent) 15%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.kpi-icon {
+    font-size: 1.4rem;
+    color: var(--accent);
+}
+
+.kpi-body {
+    min-width: 0;
+}
+
+.kpi-label {
+    font-size: 0.78rem;
+    color: #6666aa;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.2rem;
+}
+
+.kpi-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 0.2rem;
+    white-space: nowrap;
+}
+
+.kpi-sub {
+    font-size: 0.74rem;
+    color: #555588;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── Mid Grid ─────────────────────────────────────────────────── */
+.dash-mid-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Revenue Chart */
+.chart-card {
+    overflow: hidden;
+}
+
+.revenue-chart-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Status Breakdown */
+.status-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.status-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.status-row-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100px;
+    flex-shrink: 0;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.status-row-label {
+    font-size: 0.82rem;
+    color: #aaaacc;
+    white-space: nowrap;
+}
+
+.status-bar-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex: 1;
+}
+
+.status-bar-bg {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.status-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 0.6s ease;
+}
+
+.status-row-count {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #8888aa;
+    min-width: 18px;
+    text-align: right;
+}
+
+/* Alert */
+.dash-alert {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    font-size: 0.82rem;
+    color: #fbbf24;
+    margin-top: 1.25rem;
+}
+
+.dash-alert-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+/* ── Admin Table ──────────────────────────────────────────────── */
+.admin-table-wrap {
+    overflow-x: auto;
+    border-radius: 10px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.admin-table th {
+    text-align: left;
+    padding: 0.65rem 1rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #555588;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.admin-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    color: #ccccdd;
+    vertical-align: middle;
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-table tr:hover td {
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.order-id-cell {
+    font-family: monospace;
+    font-size: 0.78rem;
+    color: #888;
+    white-space: nowrap;
+}
+
+.customer-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.customer-name {
+    font-weight: 600;
+    color: #e0e0e8;
+}
+
+.customer-email {
+    font-size: 0.75rem;
+    color: #555588;
+}
+
+.text-muted {
+    color: #777799;
+}
+
+.amount-cell {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ── Action Buttons ───────────────────────────────────────────── */
+.action-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 7px;
+    padding: 0.3rem 0.55rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: #8888aa;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.action-btn:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.action-btn.danger:hover {
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
+.action-btn.primary:hover {
+    color: #ff8c00;
+    border-color: rgba(255, 140, 0, 0.4);
+}
+
+.action-btns {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dash-mid-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .admin-page {
+        padding: 1rem 1rem 2rem;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+}

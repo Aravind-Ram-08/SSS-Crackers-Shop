@@ -1,0 +1,333 @@
+/* ================================================================
+   LIVE OFFERS BANNER — SSS Crackers
+   ================================================================ */
+
+.live-offers-banner {
+    padding: 2rem 1.5rem 1.5rem;
+    background: linear-gradient(180deg, #0d0d1a 0%, #0f0820 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.lob-container {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.lob-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.lob-header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.lob-lightning {
+    font-size: 1.4rem;
+    color: #ff8c00;
+    animation: lightningFlash 2s ease-in-out infinite;
+}
+
+@keyframes lightningFlash {
+
+    0%,
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 6px rgba(255, 140, 0, 0.6));
+    }
+
+    50% {
+        opacity: 0.7;
+        filter: drop-shadow(0 0 2px rgba(255, 140, 0, 0.2));
+    }
+}
+
+.lob-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+}
+
+.lob-count-pill {
+    background: rgba(255, 106, 0, 0.15);
+    border: 1px solid rgba(255, 106, 0, 0.3);
+    color: #ff8c00;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.2rem 0.65rem;
+    border-radius: 999px;
+    animation: pillPulse 2s ease-in-out infinite;
+}
+
+@keyframes pillPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 106, 0, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 0 4px rgba(255, 106, 0, 0.08);
+    }
+}
+
+.lob-view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ff8c00;
+    text-decoration: none;
+    transition: gap 0.2s;
+}
+
+.lob-view-all:hover {
+    gap: 0.55rem;
+}
+
+/* ── Cards Grid ─────────────────────────────────────────────── */
+.lob-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.lob-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 1.25rem;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.lob-card:hover,
+.lob-card-active {
+    transform: translateY(-3px);
+    border-color: rgba(255, 106, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(255, 106, 0, 0.12);
+}
+
+/* Card type accents */
+.lob-card-festival {
+    border-top: 2px solid #ff8c00;
+}
+
+.lob-card-flash {
+    border-top: 2px solid #ef4444;
+}
+
+.lob-card-diwali {
+    border-top: 2px solid #a855f7;
+}
+
+.lob-card-category {
+    border-top: 2px solid #3b82f6;
+}
+
+/* ── Badge ──────────────────────────────────────────────────── */
+.lob-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    margin-bottom: 0.7rem;
+}
+
+.badge-festival {
+    background: rgba(255, 140, 0, 0.15);
+    color: #ffb347;
+    border: 1px solid rgba(255, 140, 0, 0.25);
+}
+
+.badge-flash {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-diwali {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.badge-category {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* ── Body ───────────────────────────────────────────────────── */
+.lob-card-title {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 0.35rem;
+}
+
+.lob-card-desc {
+    font-size: 0.8rem;
+    color: #6666aa;
+    line-height: 1.5;
+    margin: 0 0 0.85rem;
+}
+
+.lob-card-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin-bottom: 0.85rem;
+}
+
+.lob-discount-chip {
+    background: rgba(255, 106, 0, 0.15);
+    color: #ff8c00;
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 106, 0, 0.25);
+}
+
+.lob-urgency-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+}
+
+.lob-urgency-tag.limited {
+    background: rgba(245, 158, 11, 0.12);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.lob-urgency-tag.fast {
+    background: rgba(239, 68, 68, 0.12);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.lob-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.lob-urgency-text {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.75rem;
+    color: #555588;
+}
+
+.lob-flash-timer {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #ef4444;
+    font-family: "Courier New", monospace;
+    animation: flashBlink 1s step-end infinite;
+}
+
+@keyframes flashBlink {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.lob-flash-done {
+    font-size: 0.75rem;
+    color: #555588;
+}
+
+.lob-shop-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: linear-gradient(135deg, #ff6a00, #ff8c00);
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.lob-shop-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(255, 106, 0, 0.35);
+}
+
+/* ── Big discount number (decorative) ──────────────────────── */
+.lob-big-discount {
+    position: absolute;
+    right: -0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+}
+
+/* ── Dots ───────────────────────────────────────────────────── */
+.lob-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
+}
+
+.lob-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    transition: all 0.25s;
+    padding: 0;
+}
+
+.lob-dot-active {
+    background: #ff8c00;
+    width: 20px;
+    border-radius: 3px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .lob-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .lob-big-discount {
+        font-size: 3.5rem;
+    }
+}

@@ -1,0 +1,233 @@
+.footer {
+    position: relative;
+    background: #0a0a1a;
+    padding: 4rem 0 0;
+    overflow: hidden;
+}
+
+.footer-glow {
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 160px;
+    background: radial-gradient(ellipse, rgba(255, 106, 0, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Brand */
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+
+.footer-logo .logo-icon {
+    font-size: 1.5rem;
+}
+
+.footer-logo .logo-text {
+    color: #fff;
+}
+
+.footer-logo .logo-highlight {
+    background: linear-gradient(135deg, #ff6a00, #ffb347);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-tagline {
+    color: #6b6e85;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 300px;
+}
+
+/* Sections */
+.footer-heading {
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.3px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.footer-links a {
+    color: #6b6e85;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #ff8c00;
+}
+
+/* Contact */
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: #6b6e85;
+    font-size: 0.9rem;
+}
+
+.contact-icon {
+    color: #ff8c00;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    color: #44475a;
+    font-size: 0.85rem;
+}
+
+.footer-credit {
+    color: #44475a;
+}
+
+/* ═══ Legal Disclaimer ═══════════════════════════════════════════════════ */
+.footer-legal {
+    padding: 2rem 1.75rem;
+    margin-top: 2.5rem;
+    background: rgba(245, 158, 11, 0.04);
+    border: 1px solid rgba(245, 158, 11, 0.1);
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+}
+
+.footer-legal-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1rem;
+}
+
+.footer-legal-icon {
+    font-size: 1.35rem;
+    color: #f59e0b;
+    flex-shrink: 0;
+}
+
+.footer-legal-title {
+    color: #f59e0b;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin: 0;
+}
+
+.footer-legal-text {
+    color: #6b6e85;
+    font-size: 0.82rem;
+    line-height: 1.75;
+    margin: 0 0 1.25rem;
+}
+
+.footer-legal-text strong {
+    color: #8b8ea8;
+    font-weight: 600;
+}
+
+.footer-license {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-license-label {
+    display: block;
+    color: #8b8ea8;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.3px;
+}
+
+.footer-license-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-license-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 14px;
+    border-radius: 8px;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-family: "Courier New", monospace;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}

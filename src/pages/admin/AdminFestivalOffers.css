@@ -1,0 +1,813 @@
+/* ================================================================
+   ADMIN FESTIVAL & OFFERS PAGE — SSS Crackers
+   ================================================================ */
+
+/* ── Header ─────────────────────────────────────────────────── */
+.afo-page .admin-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.afo-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: linear-gradient(135deg, #ff6a00, #ff8c00);
+    border: none;
+    border-radius: 12px;
+    padding: 0.75rem 1.4rem;
+    color: #fff;
+    font-size: 0.92rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.25s;
+    box-shadow: 0 4px 18px rgba(255, 106, 0, 0.3);
+    white-space: nowrap;
+}
+
+.afo-add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(255, 106, 0, 0.45);
+}
+
+/* ── KPI Strip ──────────────────────────────────────────────── */
+.afo-kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.afo-kpi {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 2px solid var(--ac, #ff8c00);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.afo-kpi-icon {
+    font-size: 1.5rem;
+    color: var(--ac, #ff8c00);
+    flex-shrink: 0;
+}
+
+.afo-kpi-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #555588;
+    margin: 0 0 0.1rem;
+}
+
+.afo-kpi-val {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+}
+
+/* ── Tabs ───────────────────────────────────────────────────── */
+.afo-tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 0;
+}
+
+.afo-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: #555588;
+    font-size: 0.88rem;
+    font-weight: 600;
+    font-family: inherit;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: -1px;
+}
+
+.afo-tab:hover {
+    color: #aaaacc;
+}
+
+.afo-tab-active {
+    color: #ff8c00;
+    border-bottom-color: #ff8c00;
+}
+
+/* ── Offer Table Cells ──────────────────────────────────────── */
+.afo-offer-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.afo-offer-cell strong {
+    color: #fff;
+    font-size: 0.88rem;
+}
+
+.afo-offer-cell small {
+    color: #555588;
+    font-size: 0.75rem;
+}
+
+.afo-flash-chip {
+    display: inline-block;
+    background: rgba(239, 68, 68, 0.12);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 0.1rem 0.45rem;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.afo-badge-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+.afo-badge-pill.type-festival {
+    background: rgba(255, 140, 0, 0.15);
+    color: #ffb347;
+}
+
+.afo-badge-pill.type-flash {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+}
+
+.afo-badge-pill.type-diwali {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+}
+
+.afo-badge-pill.type-category {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+}
+
+.afo-discount-val {
+    color: #ff8c00;
+    font-size: 0.9rem;
+}
+
+.afo-scope-pill {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 6px;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.75rem;
+    color: #aaaacc;
+    white-space: nowrap;
+}
+
+.afo-status-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+}
+
+.afo-status-live {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #10b981;
+}
+
+.afo-status-sched {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #f59e0b;
+}
+
+.afo-status-off {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #555588;
+}
+
+.afo-toggle-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    color: #8888aa;
+    font-size: 0.7rem;
+    font-weight: 700;
+    font-family: inherit;
+    padding: 0.15rem 0.45rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.afo-toggle-btn:hover {
+    background: rgba(255, 106, 0, 0.1);
+    color: #ff8c00;
+    border-color: rgba(255, 106, 0, 0.2);
+}
+
+.afo-sales-count {
+    font-size: 0.9rem;
+    color: #10b981;
+    font-weight: 700;
+}
+
+/* ── Festival panel ─────────────────────────────────────────── */
+.afo-festival-panel {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.afo-countdown-preview {
+    text-align: center;
+}
+
+.afo-section-heading {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #e0e0e8;
+    margin: 0 0 1.1rem;
+}
+
+.afo-mini-clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
+}
+
+.afo-clock-block {
+    display: flex;
+    align-items: center;
+    gap: 0.15rem;
+    background: rgba(255, 106, 0, 0.12);
+    border: 1px solid rgba(255, 106, 0, 0.2);
+    border-radius: 10px;
+    padding: 0.5rem 0.75rem;
+    flex-direction: column;
+    min-width: 52px;
+}
+
+.afo-clock-block strong {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #fff;
+    font-family: "Courier New", monospace;
+    line-height: 1;
+}
+
+.afo-clock-block small {
+    font-size: 0.6rem;
+    color: #ff8c00;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.afo-clock-sep {
+    font-size: 1.4rem;
+    color: #ff6a00;
+    font-weight: 900;
+    margin-bottom: 12px;
+}
+
+.afo-live-pill {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6a00, #ff8c00);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding: 0.4rem 1.2rem;
+    border-radius: 999px;
+}
+
+.afo-countdown-help {
+    font-size: 0.78rem;
+    color: #555588;
+    margin: 0;
+}
+
+/* ── Offer form grid ────────────────────────────────────────── */
+.afo-modal {
+    max-width: 680px;
+}
+
+.afo-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.afo-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.afo-fest-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.afo-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.afo-field-full {
+    grid-column: 1 / -1;
+}
+
+.afo-field label,
+.afo-fest-form .afo-field label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #aaaacc;
+    letter-spacing: 0.03em;
+}
+
+.afo-field input,
+.afo-field select,
+.afo-fest-form input {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 0.65rem 0.9rem;
+    color: #e0e0e8;
+    font-size: 0.88rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.afo-field input:focus,
+.afo-field select:focus,
+.afo-fest-form input:focus {
+    border-color: rgba(255, 106, 0, 0.5);
+}
+
+.afo-field select option {
+    background: #1a1a2e;
+    color: #e0e0e8;
+}
+
+.afo-toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+}
+
+.afo-toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.85rem;
+    color: #aaaacc;
+    cursor: pointer;
+    user-select: none;
+}
+
+.afo-toggle-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #ff8c00;
+    cursor: pointer;
+}
+
+/* ── Shared button ──────────────────────────────────────────── */
+.btn-primary-orange {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: linear-gradient(135deg, #ff6a00, #ff8c00);
+    border: none;
+    border-radius: 10px;
+    padding: 0.7rem 1.4rem;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.25s;
+    box-shadow: 0 4px 16px rgba(255, 106, 0, 0.3);
+}
+
+.btn-primary-orange:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(255, 106, 0, 0.45);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FESTIVAL TAB WRAPPER
+   ═══════════════════════════════════════════════════════════════ */
+.afo-festival-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MASTER TOGGLE CARD
+   ═══════════════════════════════════════════════════════════════ */
+.afo-toggle-master-card {
+    border-radius: 20px;
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    border: 1.5px solid;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.afo-toggle-master-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    pointer-events: none;
+    background: radial-gradient(ellipse at top right, currentColor 0%, transparent 70%);
+}
+
+/* ON state */
+.afo-tmc-on {
+    background: linear-gradient(135deg,
+            rgba(255, 140, 0, 0.08) 0%,
+            rgba(255, 106, 0, 0.05) 100%);
+    border-color: rgba(255, 140, 0, 0.35);
+    color: #ff8c00;
+    box-shadow: 0 0 40px rgba(255, 140, 0, 0.08),
+        inset 0 0 0 1px rgba(255, 140, 0, 0.05);
+}
+
+/* OFF state */
+.afo-tmc-off {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #555577;
+}
+
+.afo-tmc-left {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.afo-tmc-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+    transition: filter 0.4s;
+}
+
+.afo-tmc-on .afo-tmc-icon {
+    animation: iconGlow 2s ease-in-out infinite;
+}
+
+.afo-tmc-off .afo-tmc-icon {
+    filter: grayscale(1) opacity(0.4);
+}
+
+@keyframes iconGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.4));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 18px rgba(255, 140, 0, 0.8));
+    }
+}
+
+.afo-tmc-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.afo-tmc-title {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.afo-tmc-subtitle {
+    font-size: 0.83rem;
+    color: #7777aa;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.afo-tmc-subtitle strong {
+    color: #aaaacc;
+}
+
+/* Status label pill */
+.afo-tmc-status-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    width: fit-content;
+    transition: all 0.3s;
+}
+
+.afo-tmc-status-label.status-active {
+    background: rgba(16, 185, 129, 0.12);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: #34d399;
+}
+
+.afo-tmc-status-label.status-disabled {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #555577;
+}
+
+.afo-tmc-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.status-active .afo-tmc-dot {
+    background: #10b981;
+    animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+.status-disabled .afo-tmc-dot {
+    background: #444466;
+}
+
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 0 5px rgba(16, 185, 129, 0.08);
+    }
+}
+
+/* Right side */
+.afo-tmc-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.afo-tmc-off-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #555577;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.afo-tmc-on-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #10b981;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* ── Big Toggle Switch ───────────────────────────────────────── */
+.afo-big-toggle {
+    position: relative;
+    width: 72px;
+    height: 38px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: background 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s;
+    padding: 0;
+    flex-shrink: 0;
+    outline: none;
+}
+
+.afo-big-toggle:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.4);
+}
+
+.afo-big-toggle-on {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.35);
+}
+
+.afo-big-toggle-thumb {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s;
+}
+
+.afo-big-toggle-on .afo-big-toggle-thumb {
+    transform: translateX(34px);
+    box-shadow: 0 2px 12px rgba(34, 197, 94, 0.4);
+}
+
+/* ── Off preview message ─────────────────────────────────────── */
+.afo-countdown-off-msg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.afo-countdown-off-icon {
+    font-size: 2.5rem;
+}
+
+.afo-countdown-off-msg p {
+    font-size: 0.85rem;
+    color: #555577;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.afo-countdown-off-msg strong {
+    color: #f87171;
+}
+
+/* ── Display Style Picker ────────────────────────────────────── */
+.afo-style-picker {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.2rem;
+}
+
+.afo-style-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    padding: 1rem 0.75rem;
+    cursor: pointer;
+    transition: all 0.22s;
+    font-family: inherit;
+    text-align: center;
+}
+
+.afo-style-card:hover {
+    background: rgba(255, 106, 0, 0.06);
+    border-color: rgba(255, 106, 0, 0.2);
+}
+
+.afo-style-card-active {
+    background: rgba(255, 106, 0, 0.1);
+    border-color: rgba(255, 106, 0, 0.45);
+    box-shadow: 0 0 18px rgba(255, 106, 0, 0.12);
+}
+
+.afo-style-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.afo-style-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #e0e0e8;
+}
+
+.afo-style-card-active .afo-style-label {
+    color: #ff8c00;
+}
+
+.afo-style-desc {
+    font-size: 0.7rem;
+    color: #555577;
+    line-height: 1.3;
+}
+
+/* ── Field hints ─────────────────────────────────────────────── */
+.afo-field-hint {
+    font-size: 0.72rem;
+    color: #555577;
+    font-style: italic;
+}
+
+/* ── Save row ────────────────────────────────────────────────── */
+.afo-save-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+}
+
+.afo-save-hint {
+    font-size: 0.75rem;
+    color: #10b981;
+    font-weight: 600;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+    .afo-kpi-strip {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .afo-festival-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .afo-style-picker {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .afo-toggle-master-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .afo-tmc-right {
+        align-self: flex-start;
+    }
+
+    .afo-tmc-title {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .afo-kpi-strip {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .afo-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .afo-fest-form {
+        grid-template-columns: 1fr;
+    }
+
+    .afo-style-picker {
+        grid-template-columns: 1fr;
+    }
+
+    .afo-save-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

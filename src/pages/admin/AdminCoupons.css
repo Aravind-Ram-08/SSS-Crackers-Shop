@@ -1,0 +1,654 @@
+/* =============================================
+   ADMIN COUPONS — SSS Crackers
+   ============================================= */
+
+/* ── Stats Row ───────────────────────────────────────── */
+.ac-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1.5rem;
+}
+
+.ac-stat-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.ac-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.ac-stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+}
+
+.ac-stat-label {
+    font-size: 0.78rem;
+    color: #888;
+    margin: 0.2rem 0 0;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+/* ── Toolbar ─────────────────────────────────────────── */
+.ac-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.ac-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.ac-search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+    max-width: 350px;
+}
+
+.ac-search-icon {
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.ac-search {
+    width: 100%;
+    padding: 0.65rem 1rem 0.65rem 2.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    color: #e0e0e8;
+    font-family: inherit;
+    font-size: 0.88rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.ac-search:focus {
+    border-color: rgba(255, 140, 0, 0.5);
+}
+
+.ac-search::placeholder {
+    color: #555;
+}
+
+.ac-filter-select {
+    padding: 0.65rem 1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    color: #e0e0e8;
+    font-family: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.ac-filter-select option {
+    background: #1a1a2e;
+    color: #e0e0e8;
+}
+
+.ac-create-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+}
+
+/* ── Table ────────────────────────────────────────────── */
+.ac-table-wrap {
+    padding: 0 1.5rem;
+    overflow-x: auto;
+}
+
+.ac-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.ac-table thead {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.ac-table th {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.ac-table td {
+    padding: 1rem;
+    font-size: 0.88rem;
+    color: #ccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    vertical-align: middle;
+}
+
+.ac-row-inactive {
+    opacity: 0.5;
+}
+
+/* Code cell */
+.ac-code-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ac-code-badge {
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.15), rgba(238, 9, 121, 0.15));
+    border: 1px solid rgba(255, 140, 0, 0.2);
+    color: #ff8c00;
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.3rem 0.65rem;
+    border-radius: 8px;
+    letter-spacing: 0.06em;
+    font-family: "JetBrains Mono", monospace;
+    white-space: nowrap;
+}
+
+.ac-copy-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    color: #888;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.ac-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.ac-code-desc {
+    display: block;
+    color: #666;
+    font-size: 0.75rem;
+    margin-top: 0.3rem;
+    max-width: 220px;
+}
+
+/* Type badge */
+.ac-type-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.ac-type-percentage {
+    background: rgba(99, 102, 241, 0.12);
+    color: #818cf8;
+}
+
+.ac-type-flat {
+    background: rgba(74, 222, 128, 0.12);
+    color: #4ade80;
+}
+
+.ac-value-cell {
+    font-weight: 700;
+    color: #fff;
+}
+
+.ac-category-chip {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+.ac-all-cat {
+    color: #666;
+    font-size: 0.82rem;
+}
+
+/* Usage */
+.ac-usage {
+    font-weight: 600;
+    color: #e0e0e8;
+}
+
+.ac-usage-limit {
+    color: #666;
+    font-weight: 400;
+}
+
+/* Expiry */
+.ac-expiry {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.82rem;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+.ac-expired {
+    color: #ef4444;
+}
+
+/* Status toggle */
+.ac-status-toggle {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    border: none;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: background 0.3s;
+    padding: 0;
+}
+
+.ac-status-toggle.ac-active {
+    background: linear-gradient(135deg, #4ade80, #22c55e);
+}
+
+.ac-status-toggle.ac-inactive {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.ac-toggle-knob {
+    position: absolute;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    transition: left 0.3s;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.ac-active .ac-toggle-knob {
+    left: 23px;
+}
+
+.ac-inactive .ac-toggle-knob {
+    left: 3px;
+}
+
+/* Actions */
+.ac-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.ac-action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.ac-edit {
+    background: rgba(99, 102, 241, 0.08);
+    color: #818cf8;
+}
+
+.ac-edit:hover {
+    background: rgba(99, 102, 241, 0.2);
+}
+
+.ac-delete {
+    background: rgba(239, 68, 68, 0.08);
+    color: #ef4444;
+}
+
+.ac-delete:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.ac-delete-confirm {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.ac-delete-yes {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+}
+
+.ac-delete-no {
+    background: rgba(255, 255, 255, 0.06);
+    color: #888;
+}
+
+/* Empty */
+.ac-empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+}
+
+.ac-empty-icon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+/* ── Modal ────────────────────────────────────────────── */
+.ac-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.ac-modal {
+    background: #16172b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 580px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.ac-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.ac-modal-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.ac-modal-header h2 svg {
+    color: #ff8c00;
+}
+
+.ac-modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: rgba(255, 255, 255, 0.05);
+    color: #888;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+}
+
+.ac-modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Form */
+.ac-modal-form {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.ac-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.ac-form-group label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.ac-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.ac-input {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1.5px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    color: #e0e0e8;
+    font-family: inherit;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ac-input:focus {
+    border-color: rgba(255, 140, 0, 0.5);
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.08);
+}
+
+.ac-input::placeholder {
+    color: rgba(170, 170, 204, 0.4);
+}
+
+.ac-input option {
+    background: #1a1a2e;
+    color: #e0e0e8;
+}
+
+.ac-input-error {
+    border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+.ac-field-error {
+    font-size: 0.75rem;
+    color: #f87171;
+}
+
+.ac-input-with-prefix {
+    position: relative;
+}
+
+.ac-prefix {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-weight: 700;
+    font-size: 0.9rem;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.ac-input-prefix {
+    padding-left: 2rem !important;
+}
+
+/* Checkbox */
+.ac-checkbox-group {
+    flex-direction: row;
+}
+
+.ac-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    font-size: 0.9rem !important;
+    color: #ccc !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+}
+
+.ac-checkbox {
+    display: none;
+}
+
+.ac-checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.ac-checkbox:checked+.ac-checkbox-custom {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    border-color: transparent;
+}
+
+.ac-checkbox:checked+.ac-checkbox-custom::after {
+    content: "✓";
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Modal actions */
+.ac-modal-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 0.5rem;
+}
+
+.ac-cancel-btn {
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #aaa;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .ac-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .ac-stats-row {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 1rem;
+    }
+
+    .ac-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 1rem;
+    }
+
+    .ac-search-wrap {
+        max-width: none;
+    }
+
+    .ac-toolbar-right {
+        flex-wrap: wrap;
+    }
+
+    .ac-table-wrap {
+        padding: 0 1rem;
+    }
+
+    .ac-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ac-modal {
+        max-width: 100%;
+        margin: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ac-stats-row {
+        grid-template-columns: 1fr;
+    }
+
+    .ac-stat-card {
+        padding: 1rem;
+    }
+}

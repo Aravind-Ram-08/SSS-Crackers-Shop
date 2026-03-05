@@ -1,0 +1,552 @@
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* WhatsApp Checkout Page Styles                                             */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Empty state ────────────────────────────────────────────────────────── */
+.wa-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    padding: 2rem;
+}
+
+.wa-empty-inner {
+    text-align: center;
+    max-width: 420px;
+}
+
+.wa-empty-icon {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 1.5rem;
+    opacity: 0.7;
+}
+
+.wa-empty h2 {
+    color: #fff;
+    font-size: 1.75rem;
+    margin: 0 0 0.75rem;
+}
+
+.wa-empty p {
+    color: #6b6e85;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 2rem;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+.wa-header {
+    padding: 2rem 0 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wa-header-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.wa-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0.75rem 0 0;
+}
+
+.wa-title-icon {
+    flex-shrink: 0;
+}
+
+/* ── Layout ─────────────────────────────────────────────────────────────── */
+.wa-layout {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 2.5rem;
+    align-items: start;
+}
+
+/* ── Cards ──────────────────────────────────────────────────────────────── */
+.wa-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.wa-card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+}
+
+.wa-card-icon {
+    font-size: 1.25rem;
+    color: #25d366;
+}
+
+.wa-card-desc {
+    color: #6b6e85;
+    font-size: 0.85rem;
+    margin: 0 0 1.5rem;
+    line-height: 1.5;
+}
+
+/* ── Form ───────────────────────────────────────────────────────────────── */
+.wa-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.wa-field-full {
+    grid-column: 1 / -1;
+}
+
+.wa-label {
+    display: block;
+    color: #b0b3c5;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+}
+
+.wa-input-wrap {
+    position: relative;
+}
+
+.wa-input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #44475a;
+    font-size: 1rem;
+}
+
+.wa-textarea-wrap .wa-input-icon {
+    top: 14px;
+    transform: none;
+}
+
+.wa-input {
+    width: 100%;
+    padding: 11px 12px 11px 38px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+    color: #e0e0e8;
+    font-size: 0.88rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.25s ease;
+}
+
+.wa-textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.wa-input::placeholder {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.wa-input:focus {
+    border-color: #25d366;
+}
+
+.wa-input-err {
+    border-color: #ef4444 !important;
+}
+
+.wa-err {
+    color: #ef4444;
+    font-size: 0.72rem;
+    margin: 4px 0 0;
+}
+
+.wa-preview-btn {
+    width: 100%;
+    margin-top: 1.25rem;
+    background: linear-gradient(135deg, #25d366, #128c7e) !important;
+}
+
+.wa-preview-btn:hover {
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.3) !important;
+}
+
+/* ── Items List ─────────────────────────────────────────────────────────── */
+.wa-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wa-item-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.wa-item-index {
+    color: #44475a;
+    font-size: 0.8rem;
+    font-weight: 700;
+    min-width: 20px;
+}
+
+.wa-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.wa-item-name {
+    display: block;
+    color: #e0e0e8;
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wa-item-meta {
+    color: #6b6e85;
+    font-size: 0.72rem;
+}
+
+.wa-item-price {
+    color: #4ade80;
+    font-weight: 700;
+    font-size: 0.88rem;
+    white-space: nowrap;
+}
+
+/* ── Preview ────────────────────────────────────────────────────────────── */
+.wa-preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.wa-back-btn {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #b0b3c5;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.wa-back-btn:hover {
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+}
+
+.wa-preview-box {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(37, 211, 102, 0.15);
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 1rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.wa-preview-text {
+    color: #d0d3e0;
+    font-size: 0.8rem;
+    font-family: "Inter", sans-serif;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.wa-preview-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+}
+
+.wa-copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.04);
+    color: #b0b3c5;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.wa-copy-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.wa-copy-btn.wa-copied {
+    border-color: rgba(37, 211, 102, 0.4);
+    color: #25d366;
+    background: rgba(37, 211, 102, 0.08);
+}
+
+/* ── Legal Compliance ───────────────────────────────────────────────────── */
+.wa-legal-box {
+    display: flex;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(245, 158, 11, 0.06);
+    border: 1px solid rgba(245, 158, 11, 0.15);
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+}
+
+.wa-legal-icon {
+    color: #f59e0b;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.wa-legal-content {
+    flex: 1;
+}
+
+.wa-legal-text {
+    color: #b0b3c5;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    margin: 0 0 10px;
+}
+
+.wa-legal-text strong {
+    color: #f59e0b;
+}
+
+.wa-legal-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #d0d3e0;
+    font-weight: 600;
+}
+
+.wa-legal-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #25d366;
+    cursor: pointer;
+}
+
+/* ── Send Button ────────────────────────────────────────────────────────── */
+.wa-send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.25);
+}
+
+.wa-send-btn:hover:not(:disabled) {
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px);
+}
+
+.wa-send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ── Sidebar ────────────────────────────────────────────────────────────── */
+.wa-sidebar {
+    position: sticky;
+    top: 84px;
+}
+
+.wa-summary-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 1.75rem;
+}
+
+.wa-summary-title {
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 0 0 1.25rem;
+}
+
+.wa-summary-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wa-summary-row {
+    display: flex;
+    justify-content: space-between;
+    color: #8b8ea8;
+    font-size: 0.9rem;
+}
+
+.wa-free {
+    color: #38ef7d !important;
+    font-weight: 600;
+}
+
+.wa-summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wa-total-amount {
+    font-size: 1.4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.wa-delivery-hint {
+    background: rgba(255, 140, 0, 0.08);
+    border: 1px solid rgba(255, 140, 0, 0.15);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    color: #ffb347;
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* ── How it works ───────────────────────────────────────────────────────── */
+.wa-how-it-works {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wa-how-title {
+    color: #b0b3c5;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 1rem;
+}
+
+.wa-step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 0.82rem;
+    color: #8b8ea8;
+}
+
+.wa-step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(37, 211, 102, 0.12);
+    color: #25d366;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* ── Trust Badges ───────────────────────────────────────────────────────── */
+.wa-trust-badges {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wa-trust-badges span {
+    font-size: 0.72rem;
+    color: #44475a;
+    font-weight: 600;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+    .wa-layout {
+        grid-template-columns: 1fr 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wa-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .wa-sidebar {
+        position: static;
+    }
+
+    .wa-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wa-title {
+        font-size: 1.35rem;
+    }
+}

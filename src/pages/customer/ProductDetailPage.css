@@ -1,0 +1,375 @@
+/* ═══════════════════════════════════════════════════════════════════════════ */
+/* Product Detail Page                                                       */
+/* ═══════════════════════════════════════════════════════════════════════════ */
+
+.detail-page {
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+/* ── Breadcrumb ──────────────────────────────────────────────────────────── */
+.detail-breadcrumb {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.breadcrumb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.breadcrumb-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.breadcrumb-back:hover { color: #ff8c00; }
+
+.breadcrumb-trail {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.35);
+    flex-wrap: wrap;
+}
+.breadcrumb-trail a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.breadcrumb-trail a:hover { color: #ff8c00; }
+.breadcrumb-current { color: rgba(255, 255, 255, 0.7); font-weight: 600; }
+
+/* ── Main Section ────────────────────────────────────────────────────────── */
+.detail-section {
+    padding: 2rem 0;
+}
+
+.detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* ── Image ───────────────────────────────────────────────────────────────── */
+.detail-image-area {
+    position: sticky;
+    top: 100px;
+}
+
+.detail-image-main {
+    aspect-ratio: 1;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-emoji {
+    font-size: 6rem;
+    filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+}
+
+.detail-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 10px;
+}
+
+/* ── Info ─────────────────────────────────────────────────────────────────── */
+.detail-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detail-category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #ff8c00;
+    font-weight: 600;
+}
+
+.detail-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0;
+    color: #f0f0f0;
+    line-height: 1.2;
+}
+
+/* ── Box Content ─────────────────────────────────────────────────────────── */
+.detail-box-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.box-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 500;
+}
+
+.box-value {
+    font-size: 0.85rem;
+    color: #fbbf24;
+    font-weight: 700;
+}
+
+/* ── Rating ───────────────────────────────────────────────────────────────── */
+.detail-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.detail-rating .stars {
+    display: flex;
+    gap: 2px;
+}
+.detail-rating .star {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.2);
+}
+.detail-rating .star.filled {
+    color: #fbbf24;
+}
+.rating-text {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ── Price ────────────────────────────────────────────────────────────────── */
+.detail-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.detail-price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #4ade80;
+}
+
+.detail-original {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.35);
+    text-decoration: line-through;
+}
+
+.detail-discount-tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ff6a00;
+    background: rgba(255, 106, 0, 0.12);
+    padding: 4px 10px;
+    border-radius: 8px;
+}
+
+/* ── Description ─────────────────────────────────────────────────────────── */
+.detail-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+/* ── Stock ────────────────────────────────────────────────────────────────── */
+.detail-stock {
+    font-size: 0.85rem;
+}
+.stock-available {
+    color: #4ade80;
+    font-weight: 600;
+}
+.stock-out {
+    color: #f87171;
+    font-weight: 600;
+}
+
+/* ── Actions ─────────────────────────────────────────────────────────────── */
+.detail-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.qty-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.qty-btn:hover:not(:disabled) { background: rgba(255, 255, 255, 0.1); }
+.qty-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.qty-value {
+    width: 40px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.detail-add-btn {
+    flex: 1;
+}
+.detail-add-btn.added {
+    background: linear-gradient(135deg, #11998e, #38ef7d) !important;
+}
+
+/* ── Quantity total preview ──────────────────────────────────────────────── */
+.detail-qty-total {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.55);
+    padding: 8px 12px;
+    background: rgba(74, 222, 128, 0.08);
+    border-radius: 8px;
+    border: 1px solid rgba(74, 222, 128, 0.15);
+}
+.detail-qty-total strong {
+    color: #4ade80;
+}
+
+/* ── Features ────────────────────────────────────────────────────────────── */
+.detail-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 8px;
+}
+
+.detail-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-icon {
+    font-size: 1.3rem;
+    color: #ff8c00;
+    flex-shrink: 0;
+}
+
+.detail-feature div {
+    display: flex;
+    flex-direction: column;
+}
+.detail-feature strong {
+    font-size: 0.85rem;
+    color: #f0f0f0;
+}
+.detail-feature span {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Not Found ───────────────────────────────────────────────────────────── */
+.detail-not-found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    gap: 12px;
+    text-align: center;
+}
+.detail-not-found .empty-emoji {
+    font-size: 4rem;
+}
+
+/* ── Related Products ────────────────────────────────────────────────────── */
+.related-section {
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.related-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem;
+    color: #f0f0f0;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .detail-image-area {
+        position: static;
+    }
+    .detail-title {
+        font-size: 1.4rem;
+    }
+    .detail-price {
+        font-size: 1.6rem;
+    }
+    .detail-actions {
+        flex-direction: column;
+    }
+    .detail-add-btn {
+        width: 100%;
+    }
+    .detail-emoji {
+        font-size: 4rem;
+    }
+}

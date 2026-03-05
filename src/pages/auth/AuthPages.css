@@ -1,0 +1,319 @@
+/* ================================================================
+   AUTH PAGES — SSS Crackers (Login + Signup)
+   ================================================================ */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background: #080812;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ambient glows */
+.auth-glow {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(80px);
+    opacity: 0.18;
+}
+
+.auth-glow-1 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #ff6a00, transparent);
+    top: -120px;
+    left: -120px;
+}
+
+.auth-glow-2 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #7c3aed, transparent);
+    bottom: -100px;
+    right: -80px;
+}
+
+/* Card */
+.auth-card {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 24px;
+    padding: 2.5rem 2.25rem;
+    width: 100%;
+    max-width: 440px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+    animation: authCardIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.auth-card-signup {
+    max-width: 560px;
+}
+
+@keyframes authCardIn {
+    from {
+        opacity: 0;
+        transform: translateY(28px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Brand */
+.auth-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.75rem;
+}
+
+.auth-brand-icon {
+    font-size: 1.8rem;
+}
+
+.auth-brand-name {
+    font-size: 1.2rem;
+    color: #e0e0e8;
+    letter-spacing: -0.01em;
+}
+
+.auth-brand-name strong {
+    color: #ff8c00;
+}
+
+/* Heading */
+.auth-title {
+    font-size: 1.75rem;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    margin: 0 0 0.35rem;
+    letter-spacing: -0.03em;
+}
+
+.auth-subtitle {
+    font-size: 0.85rem;
+    color: #555577;
+    text-align: center;
+    margin: 0 0 1.75rem;
+}
+
+/* Error */
+.auth-error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.25);
+    border-radius: 10px;
+    padding: 0.65rem 1rem;
+    font-size: 0.83rem;
+    color: #f87171;
+    margin-bottom: 1.25rem;
+}
+
+/* Form */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.auth-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.85rem;
+}
+
+/* Field */
+.auth-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.auth-field label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #aaaacc;
+    letter-spacing: 0.03em;
+}
+
+.auth-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auth-forgot {
+    font-size: 0.75rem;
+    color: #ff8c00;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.auth-forgot:hover {
+    opacity: 0.75;
+}
+
+/* Input wrap */
+.auth-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.auth-input-icon {
+    position: absolute;
+    left: 0.85rem;
+    color: #555577;
+    font-size: 1rem;
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.auth-input-wrap input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 0.7rem 2.6rem 0.7rem 2.6rem;
+    color: #e0e0e8;
+    font-size: 0.9rem;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.22s, background 0.22s;
+}
+
+.auth-input-wrap input:focus {
+    border-color: rgba(255, 106, 0, 0.55);
+    background: rgba(255, 106, 0, 0.04);
+}
+
+.auth-input-wrap input::placeholder {
+    color: #444466;
+}
+
+.auth-eye {
+    position: absolute;
+    right: 0.85rem;
+    background: none;
+    border: none;
+    color: #555577;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.auth-eye:hover {
+    color: #aaaacc;
+}
+
+/* Hints */
+.auth-optional {
+    color: #555577;
+    font-weight: 400;
+}
+
+.auth-field-hint {
+    font-size: 0.72rem;
+    color: #555577;
+    font-style: italic;
+}
+
+/* Submit */
+.auth-submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6a00, #ff8c00);
+    border: none;
+    border-radius: 12px;
+    padding: 0.9rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.28s;
+    box-shadow: 0 4px 20px rgba(255, 106, 0, 0.35);
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 50px;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(255, 106, 0, 0.5);
+}
+
+.auth-submit-btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Spinner */
+.auth-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Switch link */
+.auth-switch {
+    text-align: center;
+    font-size: 0.83rem;
+    color: #555577;
+    margin: 1.25rem 0 0;
+}
+
+.auth-switch-link {
+    color: #ff8c00;
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity 0.2s;
+}
+
+.auth-switch-link:hover {
+    opacity: 0.75;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 540px) {
+    .auth-card {
+        padding: 1.75rem 1.25rem;
+        border-radius: 18px;
+    }
+
+    .auth-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-title {
+        font-size: 1.45rem;
+    }
+}

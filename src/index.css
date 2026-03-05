@@ -1,0 +1,305 @@
+/* =============================================
+   GLOBAL STYLES — SSS Crackers
+   Author: SSS Crackers Dev Team
+   ============================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+
+/* ── Reset ────────────────────────────────── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: #0b0b1a;
+    color: #e0e0e8;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    /* Reserve space for mobile bottom nav on small screens */
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    /* Performance: prevent layout shift */
+    height: auto;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* ── Scrollbar ────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b0b1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2a2a4a;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3a3a5a;
+}
+
+/* ── Focus ring for keyboard accessibility ── */
+:focus-visible {
+    outline: 2px solid #ff8c00;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* ── Selection ────────────────────────────── */
+::selection {
+    background: rgba(255, 140, 0, 0.3);
+    color: #fff;
+}
+
+/* ══════════════════════════════════════════
+   SHARED BUTTONS
+   ══════════════════════════════════════════ */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.65rem 1.5rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.28s ease;
+    white-space: nowrap;
+    font-family: inherit;
+    /* Minimum touch target */
+    min-height: 44px;
+}
+
+.btn-lg {
+    padding: 0.85rem 2rem;
+    font-size: 1rem;
+    border-radius: 12px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(255, 106, 0, 0.22);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 28px rgba(255, 106, 0, 0.38);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #ff8c00;
+    border: 1px solid rgba(255, 140, 0, 0.28);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 140, 0, 0.07);
+    border-color: rgba(255, 140, 0, 0.5);
+}
+
+/* ── Secondary / ghost button ─────────────── */
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    color: #e0e0e8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ══════════════════════════════════════════
+   PAGE LAYOUT
+   ══════════════════════════════════════════ */
+
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-content {
+    flex: 1;
+    /* Prevent content from sitting behind mobile bottom nav */
+    padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* ══════════════════════════════════════════
+   SHARED ADMIN STYLES  (reused across admin pages)
+   ══════════════════════════════════════════ */
+
+.admin-page {
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.admin-page-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.admin-page-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+}
+
+.admin-page-sub {
+    color: #6b6e85;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+/* ══════════════════════════════════════════
+   MOBILE BOTTOM NAVIGATION
+   ══════════════════════════════════════════ */
+
+.mobile-bottom-nav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 990;
+        background: rgba(11, 11, 26, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid rgba(255, 165, 0, 0.1);
+        padding: 6px 0 max(6px, env(safe-area-inset-bottom));
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .mobile-nav-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        padding: 6px 12px;
+        background: none;
+        border: none;
+        color: #6b6e85;
+        font-size: 0.6rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: color 0.2s;
+        font-family: inherit;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        position: relative;
+        min-width: 52px;
+    }
+
+    .mobile-nav-btn svg,
+    .mobile-nav-btn .mob-nav-icon {
+        font-size: 1.35rem;
+        display: block;
+    }
+
+    .mobile-nav-btn:hover,
+    .mobile-nav-btn.active {
+        color: #ff8c00;
+    }
+
+    .mobile-nav-badge {
+        position: absolute;
+        top: 2px;
+        right: 8px;
+        background: linear-gradient(135deg, #ff6a00, #ee0979);
+        color: #fff;
+        font-size: 0.55rem;
+        font-weight: 800;
+        min-width: 15px;
+        height: 15px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 3px;
+    }
+
+    /* Push page content above the bottom nav */
+    .page-content {
+        padding-bottom: 64px;
+    }
+}
+
+/* ══════════════════════════════════════════
+   TOAST / NOTIFICATION
+   ══════════════════════════════════════════ */
+
+.Toastify__toast-container {
+    z-index: 10000;
+}
+
+/* ══════════════════════════════════════════
+   UTILITY CLASSES
+   ══════════════════════════════════════════ */
+
+.text-muted {
+    color: #6b6e85;
+}
+
+.text-accent {
+    color: #ff8c00;
+}
+
+.text-green {
+    color: #4ade80;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
