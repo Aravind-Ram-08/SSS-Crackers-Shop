@@ -5,14 +5,19 @@ import {
     HiOutlineChartBar, HiOutlineMenu, HiOutlineX, HiOutlineLogout,
     HiOutlineBell, HiOutlineChevronRight, HiOutlineChatAlt2, HiOutlinePhone,
     HiOutlineTag, HiOutlineDocumentText, HiOutlineLocationMarker, HiOutlineSparkles,
+    HiOutlineCube, HiOutlineUpload, HiOutlinePresentationChartLine,
 } from "react-icons/hi";
 import { useAdminData } from "../../context/AdminDataContext";
+import { clearAdminSession } from "./SecureAdminLogin";
 import "./AdminLayout.css";
 
 const NAV_ITEMS = [
     { to: "/admin", label: "Dashboard", icon: HiOutlineChartBar, end: true },
     { to: "/admin/products", label: "Products", icon: HiOutlineShoppingBag },
+    { to: "/admin/inventory", label: "Inventory", icon: HiOutlineCube },
     { to: "/admin/orders", label: "Orders", icon: HiOutlineClipboardList },
+    { to: "/admin/analytics", label: "Analytics", icon: HiOutlinePresentationChartLine },
+    { to: "/admin/bulk-import", label: "Bulk Import", icon: HiOutlineUpload },
     { to: "/admin/order-tracking", label: "Order Tracking", icon: HiOutlineLocationMarker },
     { to: "/admin/festival-offers", label: "Festival & Offers", icon: HiOutlineSparkles },
     { to: "/admin/coupons", label: "Coupons", icon: HiOutlineTag },
@@ -25,6 +30,11 @@ export default function AdminLayout() {
     const [sidebarOpen, setSidebarOpen] = useState(true);
     const { stats } = useAdminData();
     const navigate = useNavigate();
+
+    function handleAdminLogout() {
+        clearAdminSession();
+        navigate("/secure-owner-dashboard");
+    }
 
     return (
         <div className={`admin-shell ${sidebarOpen ? "sidebar-expanded" : "sidebar-collapsed"}`}>
@@ -79,6 +89,10 @@ export default function AdminLayout() {
                         <HiOutlineHome />
                         {sidebarOpen && <span>Store</span>}
                     </Link>
+                    <button className="sidebar-exit-btn sidebar-logout-btn" onClick={handleAdminLogout} title="Logout">
+                        <HiOutlineLogout />
+                        {sidebarOpen && <span>Logout</span>}
+                    </button>
                 </div>
             </aside>
 

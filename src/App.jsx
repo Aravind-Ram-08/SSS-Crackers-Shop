@@ -50,6 +50,10 @@ import AdminChatbot from "./pages/admin/AdminChatbot";
 import AdminEnquiries from "./pages/admin/AdminEnquiries";
 import AdminOrderTracking from "./pages/admin/AdminOrderTracking";
 import AdminFestivalOffers from "./pages/admin/AdminFestivalOffers";
+import AdminInventory from "./pages/admin/AdminInventory";
+import AdminAnalytics from "./pages/admin/AdminAnalytics";
+import AdminBulkImport from "./pages/admin/AdminBulkImport";
+import SecureAdminLogin from "./pages/admin/SecureAdminLogin";
 
 // ── Protected Route guard ─────────────────────────────────────────────────
 function ProtectedRoute({ children }) {
@@ -116,10 +120,14 @@ function App() {
                                                 </Route>
 
                                                 {/* ── Admin ── */}
+                                                <Route path="/secure-owner-dashboard" element={<SecureAdminLogin />} />
                                                 <Route path="/admin" element={<AdminLayout />}>
                                                     <Route index element={<AdminDashboard />} />
                                                     <Route path="products" element={<AdminProducts />} />
+                                                    <Route path="inventory" element={<AdminInventory />} />
                                                     <Route path="orders" element={<AdminOrders />} />
+                                                    <Route path="analytics" element={<AdminAnalytics />} />
+                                                    <Route path="bulk-import" element={<AdminBulkImport />} />
                                                     <Route path="coupons" element={<AdminCoupons />} />
                                                     <Route path="invoices" element={<AdminInvoices />} />
                                                     <Route path="chatbot" element={<AdminChatbot />} />

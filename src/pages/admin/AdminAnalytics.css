@@ -1,0 +1,292 @@
+/* ============================================================
+   ADMIN ANALYTICS — SSS Crackers
+   ============================================================ */
+
+/* ── Period Toggle ───────────────────────────────────────────── */
+.analytics-period-tabs {
+    display: flex;
+    gap: 0.35rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 10px;
+    padding: 0.25rem;
+}
+
+.analytics-period-btn {
+    padding: 0.38rem 0.9rem;
+    border-radius: 7px;
+    border: none;
+    background: transparent;
+    color: #8888aa;
+    font-size: 0.83rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.analytics-period-btn.active {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    color: #fff;
+}
+
+/* ── Charts Grid ─────────────────────────────────────────────── */
+.analytics-charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.analytics-chart-card {
+    overflow: hidden;
+}
+
+.analytics-chart-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Chart totals */
+.analytics-chart-totals {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+}
+
+.analytics-total-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.analytics-total-label {
+    font-size: 0.72rem;
+    color: #555588;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.analytics-total-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #e0e0e8;
+}
+
+/* ── Donut ───────────────────────────────────────────────────── */
+.donut-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.donut-svg {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+}
+
+.donut-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 120px;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.donut-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+}
+
+.donut-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.donut-legend-name {
+    color: #aaaacc;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.donut-legend-val {
+    font-weight: 700;
+    color: #e0e0e8;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+/* ── Bottom Grid ─────────────────────────────────────────────── */
+.analytics-bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ── Top List ────────────────────────────────────────────────── */
+.analytics-top-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.analytics-top-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.82rem;
+}
+
+.analytics-rank {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: #6666aa;
+    font-size: 0.7rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.analytics-top-name {
+    color: #c0c0d8;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.analytics-top-qty {
+    color: #8888aa;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+.analytics-top-rev {
+    color: #ff8c00;
+    font-weight: 700;
+    white-space: nowrap;
+    min-width: 60px;
+    text-align: right;
+}
+
+/* Category bar */
+.analytics-cat-bar-wrap {
+    flex: 1;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.analytics-cat-bar {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 0.5s ease;
+}
+
+/* ── Status Grid ─────────────────────────────────────────────── */
+.analytics-status-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.85rem;
+}
+
+.analytics-status-card {
+    border: 1px solid;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.analytics-status-count {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
+}
+
+.analytics-status-label {
+    font-size: 0.77rem;
+    color: #8888aa;
+    margin: 0.2rem 0 0.6rem;
+    font-weight: 500;
+}
+
+.analytics-status-pct-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 99px;
+    overflow: hidden;
+    margin: 0 0 0.3rem;
+}
+
+.analytics-status-pct-fill {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 0.5s ease;
+}
+
+.analytics-status-pct-label {
+    font-size: 0.72rem;
+    color: #555588;
+    margin: 0;
+}
+
+/* ── Empty ───────────────────────────────────────────────────── */
+.analytics-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: #555588;
+    font-size: 0.85rem;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+    .analytics-charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-status-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .analytics-bottom-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-status-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .analytics-status-grid {
+        grid-template-columns: 1fr;
+    }
+}

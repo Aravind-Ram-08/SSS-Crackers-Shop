@@ -216,6 +216,17 @@
     flex-shrink: 0;
 }
 
+.sidebar-logout-btn {
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid rgba(239, 68, 68, 0.15);
+}
+
+.sidebar-logout-btn:hover {
+    color: #ef4444 !important;
+    border-color: rgba(239, 68, 68, 0.35) !important;
+}
+
 /* ── Main ─────────────────────────────────────────────────────── */
 .admin-main {
     display: flex;

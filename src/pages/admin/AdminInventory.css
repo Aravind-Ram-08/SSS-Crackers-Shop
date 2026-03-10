@@ -1,0 +1,250 @@
+/* ============================================================
+   ADMIN INVENTORY — SSS Crackers
+   ============================================================ */
+
+/* ── Summary Grid ──────────────────────────────────────────── */
+.inv-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.inv-summary-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 1.2rem 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+    font-size: inherit;
+}
+
+.inv-summary-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.inv-summary-card.active-in {
+    border-color: rgba(16, 185, 129, 0.4);
+    background: rgba(16, 185, 134, 0.08);
+}
+
+.inv-summary-card.active-low {
+    border-color: rgba(245, 158, 11, 0.4);
+    background: rgba(245, 158, 11, 0.08);
+}
+
+.inv-summary-card.active-out {
+    border-color: rgba(239, 68, 68, 0.4);
+    background: rgba(239, 68, 68, 0.08);
+}
+
+.inv-summary-icon {
+    font-size: 1.7rem;
+    flex-shrink: 0;
+}
+
+.inv-summary-value {
+    font-size: 1.65rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.inv-summary-label {
+    font-size: 0.78rem;
+    color: #6666aa;
+    margin: 0.15rem 0 0;
+    font-weight: 500;
+}
+
+/* ── Alert Banner ────────────────────────────────────────────── */
+.inv-alert-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-radius: 12px;
+    padding: 0.9rem 1.25rem;
+    font-size: 0.85rem;
+    color: #fbbf24;
+    margin-bottom: 1.5rem;
+}
+
+.inv-alert-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+/* ── Stock Cell ──────────────────────────────────────────────── */
+.inv-stock-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.inv-stock-bar-wrap {
+    width: 80px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 99px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.inv-stock-bar-fill {
+    height: 100%;
+    border-radius: 99px;
+    transition: width 0.4s ease;
+}
+
+.inv-stock-num {
+    font-weight: 700;
+    color: #e0e0e8;
+    font-size: 0.9rem;
+    min-width: 30px;
+}
+
+/* ── Status Badge ────────────────────────────────────────────── */
+.inv-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.inv-status-badge.in {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.12);
+}
+
+.inv-status-badge.low {
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.12);
+}
+
+.inv-status-badge.out {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.12);
+}
+
+/* ── Inline Edit ─────────────────────────────────────────────── */
+.inv-edit-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.inv-stock-input {
+    width: 72px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 7px;
+    color: #e0e0e8;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+.inv-stock-input:focus {
+    border-color: #ff8c00;
+}
+
+/* ── Clear Filter Button ─────────────────────────────────────── */
+.inv-clear-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.9rem;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 8px;
+    color: #ef4444;
+    font-size: 0.83rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.inv-clear-filter-btn:hover {
+    background: rgba(239, 68, 68, 0.18);
+}
+
+/* ── Pagination ──────────────────────────────────────────────── */
+.inv-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0 0;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.inv-page-info {
+    font-size: 0.8rem;
+    color: #555588;
+}
+
+.inv-page-btns {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.inv-page-btn {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 7px;
+    color: #8888aa;
+    font-size: 0.82rem;
+    padding: 0.3rem 0.65rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.inv-page-btn:hover:not(:disabled) {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.inv-page-btn.active {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    border-color: transparent;
+    color: #fff;
+    font-weight: 700;
+}
+
+.inv-page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* ── prod-cat-pill + prod-sale-price + prod-filters (shared) ─── */
+.prod-filters {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+    .inv-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .inv-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
