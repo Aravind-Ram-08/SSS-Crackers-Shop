@@ -1,7 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import {
-    HiOutlineHome, HiOutlineShoppingBag, HiOutlineShoppingCart,
-    HiOutlinePhone,
+    HiOutlineHome, HiHome,
+    HiOutlineShoppingBag, HiShoppingBag,
+    HiOutlineShoppingCart, HiShoppingCart,
+    HiOutlinePhone, HiPhone,
 } from "react-icons/hi";
 import { useCart } from "../../context/CartContext";
 
@@ -10,16 +12,38 @@ export default function MobileBottomNav() {
     const { pathname } = useLocation();
 
     const items = [
-        { to: "/", icon: HiOutlineHome, label: "Home" },
-        { to: "/products", icon: HiOutlineShoppingBag, label: "Shop" },
-        { to: "/cart", icon: HiOutlineShoppingCart, label: "Cart", badge: cartCount },
-        { to: "/whatsapp-order", icon: HiOutlinePhone, label: "Order" },
+        {
+            to: "/",
+            iconIdle: HiOutlineHome,
+            iconActive: HiHome,
+            label: "Home",
+        },
+        {
+            to: "/products",
+            iconIdle: HiOutlineShoppingBag,
+            iconActive: HiShoppingBag,
+            label: "Shop",
+        },
+        {
+            to: "/cart",
+            iconIdle: HiOutlineShoppingCart,
+            iconActive: HiShoppingCart,
+            label: "Cart",
+            badge: cartCount,
+        },
+        {
+            to: "/whatsapp-order",
+            iconIdle: HiOutlinePhone,
+            iconActive: HiPhone,
+            label: "Order",
+        },
     ];
 
     return (
         <nav className="mobile-bottom-nav" aria-label="Mobile navigation">
-            {items.map(({ to, icon: Icon, label, badge }) => {
+            {items.map(({ to, iconIdle: IconIdle, iconActive: IconActive, label, badge }) => {
                 const active = to === "/" ? pathname === "/" : pathname.startsWith(to);
+                const Icon = active ? IconActive : IconIdle;
                 return (
                     <Link
                         key={to}
@@ -27,11 +51,16 @@ export default function MobileBottomNav() {
                         className={`mobile-nav-btn ${active ? "active" : ""}`}
                         aria-label={label}
                         aria-current={active ? "page" : undefined}
+                        id={`bottom-nav-${label.toLowerCase()}`}
                     >
-                        <Icon aria-hidden="true" />
-                        {badge > 0 && (
-                            <span className="mobile-nav-badge" aria-hidden="true">{badge}</span>
-                        )}
+                        <span className="nav-icon-wrap">
+                            <Icon aria-hidden="true" />
+                            {badge > 0 && (
+                                <span className="mobile-nav-badge" aria-hidden="true" key={badge}>
+                                    {badge}
+                                </span>
+                            )}
+                        </span>
                         <span>{label}</span>
                     </Link>
                 );

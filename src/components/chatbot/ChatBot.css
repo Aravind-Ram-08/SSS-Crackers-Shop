@@ -632,22 +632,22 @@
 
 /* ── Mobile Responsive ──────────────────────────────────────────────────── */
 
-/* Tablet (481px – 768px) */
+/* Tablet (481px – 768px): chat toggle stacks above WA float */
 @media (max-width: 768px) and (min-width: 481px) {
     .chat-toggle-btn {
-        /* Above bottom nav (64px) + gap */
-        bottom: 78px;
-        right: 16px;
-        width: 50px;
-        height: 50px;
+        /* Bottom nav: 64px + gap 14px + WA btn 48px + gap 10px = 136px */
+        bottom: 136px;
+        right: 14px;
+        width: 48px;
+        height: 48px;
     }
 
     .chat-window {
-        bottom: 140px;
-        right: 16px;
+        bottom: 196px;
+        right: 14px;
         width: 340px;
         height: 500px;
-        max-height: calc(100vh - 160px);
+        max-height: calc(100vh - 210px);
         border-radius: 18px;
     }
 
@@ -656,30 +656,28 @@
     }
 }
 
-/* Mobile (≤480px) – Full-screen bottom sheet */
+/* Mobile (≤480px): stack chat above WA float above bottom nav */
 @media (max-width: 480px) {
     .chat-toggle-btn {
-        /* Must be above bottom nav (64px) */
-        bottom: 76px;
-        right: 14px;
-        width: 48px;
-        height: 48px;
+        /* bottom nav 64 + gap 12 + wa btn 46 + gap 10 = 132px */
+        bottom: 132px;
+        right: 12px;
+        width: 46px;
+        height: 46px;
     }
 
     .chat-toggle-icon {
-        font-size: 1.35rem;
+        font-size: 1.3rem;
     }
 
     .chat-window {
-        /* Full-width bottom sheet */
+        /* Full-width bottom sheet — sits above bottom nav */
         bottom: 64px;
-        /* sit just above bottom nav */
         left: 0;
         right: 0;
         width: 100%;
-        height: calc(100vh - 120px);
-        /* leave room for navbar + bottom nav */
-        max-height: calc(100vh - 120px);
+        height: calc(100vh - 130px);
+        max-height: calc(100vh - 130px);
         border-radius: 20px 20px 0 0;
         border-bottom: none;
     }
@@ -707,14 +705,15 @@
 /* Extreme small (≤375px) */
 @media (max-width: 375px) {
     .chat-toggle-btn {
-        width: 44px;
-        height: 44px;
-        bottom: 74px;
-        right: 12px;
+        /* bottom nav 64 + gap 10 + wa btn 44 + gap 10 = 128px */
+        width: 42px;
+        height: 42px;
+        bottom: 128px;
+        right: 10px;
     }
 
     .chat-toggle-icon {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
     }
 
     .chat-header {

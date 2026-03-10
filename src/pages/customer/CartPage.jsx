@@ -124,11 +124,13 @@ export default function CartPage() {
         return (
             <div className="cart-empty">
                 <div className="cart-empty-inner">
-                    <span className="cart-empty-icon">🛒</span>
-                    <h2>Your Cart is Empty</h2>
-                    <p>Looks like you haven't added any crackers yet. Start shopping and light up your celebrations!</p>
-                    <Link to="/products" className="btn btn-primary btn-lg">
-                        <HiOutlineShoppingCart /> Start Shopping
+                    <div className="cart-empty-icon-wrap">
+                        <span className="cart-empty-icon" aria-hidden="true">🛒</span>
+                    </div>
+                    <h2 className="cart-empty-title">Your Cart is Empty</h2>
+                    <p className="cart-empty-subtitle">Looks like you haven&apos;t added any crackers yet. Start shopping and light up your celebrations! 🎆</p>
+                    <Link to="/products" className="cart-empty-cta" id="cart-start-shopping">
+                        <HiOutlineShoppingCart aria-hidden="true" /> Start Shopping
                     </Link>
                 </div>
             </div>

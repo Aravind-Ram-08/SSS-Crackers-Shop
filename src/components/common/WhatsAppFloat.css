@@ -1,31 +1,53 @@
 /* ═══════════════════════════════════════════════════════════════════════════ */
-/* Floating WhatsApp Support Button — Mobile-First Responsive                */
+/* Floating WhatsApp & Chat buttons — Modern, above bottom nav              */
 /* ═══════════════════════════════════════════════════════════════════════════ */
 
+/* ── WhatsApp Float Button ─────────────────────────────────────────────────── */
 .wa-float-btn {
     position: fixed;
-    /* Desktop: above chatbot toggle */
     bottom: 96px;
-    right: 24px;
+    right: 22px;
     width: 52px;
     height: 52px;
     border-radius: 50%;
     border: none;
-    background: #25d366;
+    background: linear-gradient(135deg, #25d366, #1ebe5d);
     color: #fff;
     cursor: pointer;
     z-index: 9997;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.38),
+        0 0 0 0 rgba(37, 211, 102, 0);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.3s ease;
     touch-action: manipulation;
+    animation: floatBob 3.5s ease-in-out infinite;
+}
+
+@keyframes floatBob {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 .wa-float-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+    animation: none;
+    transform: scale(1.1);
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.55),
+        0 0 0 6px rgba(37, 211, 102, 0.1);
+}
+
+.wa-float-btn:active {
+    transform: scale(0.93);
+    animation: none;
 }
 
 .wa-float-icon {
@@ -35,9 +57,10 @@
 }
 
 .wa-float-btn:hover .wa-float-icon {
-    transform: scale(1.1);
+    transform: scale(1.12) rotate(-5deg);
 }
 
+/* Badge */
 .wa-float-badge {
     position: absolute;
     top: -4px;
@@ -45,28 +68,28 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #ff6a00;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
     color: #fff;
-    font-size: 0.65rem;
-    font-weight: 700;
+    font-size: 0.62rem;
+    font-weight: 800;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #0b0b1a;
-    animation: waBadgePop 0.3s ease;
+    border: 2px solid #0a0a18;
+    animation: badgePop 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-@keyframes waBadgePop {
+@keyframes badgePop {
     0% {
-        transform: scale(0);
+        transform: scale(0) rotate(-20deg);
     }
 
     60% {
-        transform: scale(1.3);
+        transform: scale(1.3) rotate(5deg);
     }
 
     100% {
-        transform: scale(1);
+        transform: scale(1) rotate(0);
     }
 }
 
@@ -75,17 +98,19 @@
     position: absolute;
     right: 60px;
     top: 50%;
-    transform: translateY(-50%) translateX(5px);
+    transform: translateY(-50%) translateX(6px);
     white-space: nowrap;
     padding: 6px 12px;
     border-radius: 8px;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.88);
     color: #fff;
     font-size: 0.72rem;
     font-weight: 600;
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .wa-float-btn:hover .wa-float-tooltip {
@@ -93,19 +118,21 @@
     transform: translateY(-50%) translateX(0);
 }
 
-/* ── Mobile (≤768px): above bottom nav ────────────────────────────────────── */
+/* ── Mobile (≤768px): stack properly above bottom nav ───────────────────── */
+/* Bottom nav = 64px. Add 12px gap. */
 @media (max-width: 768px) {
     .wa-float-btn {
-        /* Bottom nav is ~64px, chat toggle is ~54px, add gap */
-        bottom: 130px;
+        bottom: calc(64px + 14px);
         right: 14px;
-        width: 46px;
-        height: 46px;
+        width: 48px;
+        height: 48px;
+        /* Stop floating animation on mobile for performance */
+        animation: none;
     }
 
     .wa-float-icon {
-        width: 22px;
-        height: 22px;
+        width: 23px;
+        height: 23px;
     }
 
     .wa-float-tooltip {
@@ -115,21 +142,30 @@
     .wa-float-badge {
         width: 18px;
         height: 18px;
-        font-size: 0.6rem;
+        font-size: 0.58rem;
     }
 }
 
-/* ── Extra small (≤480px) ───────────────────────────────────────────────── */
+/* ── Extra small (≤480px) ──────────────────────────────────────────────── */
 @media (max-width: 480px) {
     .wa-float-btn {
-        bottom: 128px;
+        bottom: calc(64px + 12px);
         right: 12px;
-        width: 44px;
-        height: 44px;
+        width: 46px;
+        height: 46px;
     }
 
     .wa-float-icon {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* ── 375px ──────────────────────────────────────────────────────────────── */
+@media (max-width: 375px) {
+    .wa-float-btn {
+        right: 10px;
+        width: 44px;
+        height: 44px;
     }
 }

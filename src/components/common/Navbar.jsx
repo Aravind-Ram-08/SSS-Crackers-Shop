@@ -17,8 +17,20 @@ export default function Navbar() {
     const [shopOpen, setShopOpen] = useState(false);
     const [searchOpen, setSearchOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const [cartAnimate, setCartAnimate] = useState(false);
+    const prevCountRef = useRef(cartCount);
     const shopRef = useRef(null);
     const searchRef = useRef(null);
+
+    // Cart bounce animation on count change
+    useEffect(() => {
+        if (cartCount > prevCountRef.current) {
+            setCartAnimate(true);
+            const t = setTimeout(() => setCartAnimate(false), 600);
+            return () => clearTimeout(t);
+        }
+        prevCountRef.current = cartCount;
+    }, [cartCount]);
 
     // Close dropdown when clicking outside
     useEffect(() => {
@@ -34,6 +46,7 @@ export default function Navbar() {
         return () => document.removeEventListener("mousedown", handleClick);
     }, []);
 
+    // Close mobile on route change
     const closeMobile = () => setMobileOpen(false);
 
     const handleSearch = (e) => {
@@ -160,9 +173,19 @@ export default function Navbar() {
                         )}
                     </div>
 
-                    <Link to="/cart" className="nav-action-btn cart-btn" aria-label={`Cart, ${cartCount} items`}>
+                    {/* Cart with bounce animation */}
+                    <Link
+                        to="/cart"
+                        className={`nav-action-btn cart-btn ${cartAnimate ? "cart-animate" : ""}`}
+                        aria-label={`Cart, ${cartCount} items`}
+                        id="nav-cart-btn"
+                    >
                         <HiOutlineShoppingCart />
-                        {cartCount > 0 && <span className="cart-badge" aria-hidden="true">{cartCount}</span>}
+                        {cartCount > 0 && (
+                            <span className="cart-badge" aria-hidden="true" key={cartCount}>
+                                {cartCount}
+                            </span>
+                        )}
                     </Link>
 
                     {/* Account button */}
@@ -178,11 +201,14 @@ export default function Navbar() {
                         }
                         {unreadCount > 0 && <span className="nav-notif-dot" />}
                     </Link>
+
+                    {/* Mobile hamburger */}
                     <button
                         className="nav-action-btn mobile-toggle"
                         aria-label={mobileOpen ? "Close menu" : "Open menu"}
                         aria-expanded={mobileOpen}
                         onClick={() => setMobileOpen(s => !s)}
+                        id="mobile-menu-toggle"
                     >
                         {mobileOpen ? <HiOutlineX /> : <HiOutlineMenu />}
                     </button>
